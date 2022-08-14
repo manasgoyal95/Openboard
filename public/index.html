@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>OpenBoard</title>
+</head>
+<body>
+    
+    <div class="option-cont">
+        <i class="fas fa-bars"></i>
+    </div>
+    <div class="tools-container scale-tools">
+        <img class="pencil" src="Icons/Pencil.svg" >
+        <img class="eraser" src="Icons/Eraser.svg" >
+        <img class="download" src="Icons/Download.svg" >
+        <img class="upload" src="Icons/Upload.svg" >
+        <img class="sticky" src="Icons/StickyNote.svg" >
+        <img class="undo" src="Icons/Undo.svg" >
+        <img class="redo" src="Icons/Redo.svg" >
+    </div>
+
+    <div class="pencil-container">
+        <div class="pencil-width-container">
+            <input type="range" min="2" max="10" value="3" class="pencil-width" >
+        </div>
+        <div class="pencil-color-container">
+            <div class="black pencil-color"></div>
+            <div class="red pencil-color"></div>
+            <div class="blue pencil-color"></div>
+        </div>
+    </div>
+    <div class="eraser-container">
+        <input type="range" min="2" max="30" value="3" class="eraser-width" >
+    </div>
+    
+    <canvas></canvas>
+    <script src="https://cdn.socket.io/4.5.0/socket.io.min.js" integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k" crossorigin="anonymous"></script>
+    <script>
+        let socket = io.connect("http://localhost:3000");
+    </script>
+    <script src="index.js"></script>
+    <script src="canvas.js"></script>
+</body>
+</html>
